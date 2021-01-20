@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <style>
+        .calculator{
+            
+            border: 1px white;
+            border-radius: 5px;
+            position: absolute;;
+            
+            top: 20%;
+            left:20%;
+        }
+        .calculator-screen{
+            width: 200;
+            height: 100px;
+            background-color: black;
+            color: white;
+            text-align: right;
+            padding-right: 2px;
+      padding-left: 1px;
+      font-size: 1.3rem;
+      padding-bottom: -50px;
+      border: none;
+        }
+        button {
+      height: 50px;
+      
+      background-color: rgb(43, 41, 41);
+      color: white;
+      font-size: 1.5rem;
+    }
+        .calculator-keys{
+            display: grid;
+            color: white;
+            grid-template-columns: repeat(4,1fr);
+           
+          
+        }
+        .equal-sign{
+            height: 98%;
+            grid-area: 2/4/4/5;
+            background-color: orange;
+        }
+        #op{
+            color: orange;
+        }
+     .erase{
+         background-color: rgb(184, 125, 125);
+     }
+     #clear{
+         grid-area: 5/4/4/4;
+         background-color: blue;
+     }
+     #result{
+         bottom: 10%;
+     }
+    </style>
+</head>
+<body>
+<script src="script.js"></script>
+<div class="calculator ">
+
+    <input type="text" class="calculator-screen z-depth-1" value="" id="result"  onkeydown="key(event)">
+
+    <div class="calculator-keys">
+
+      <button type="button" class="btn btn-info" value="+" onclick="dis('+')" id="op">+</button>
+      <button type="button" class="btn btn-info" value="-" onclick="dis('-')" id="op">-</button>
+      <button type="button" class="btn btn-info" value="*" onclick="dis('*')" id="op">*</button>
+      <button type="button" class="btn btn-info" value="/" onclick="dis('/')" id="op">/</button>
+
+      <button type="button" value="7" class="btn btn-light" onclick="dis('7')">7</button>
+      <button type="button" value="8" class="btn btn-light" onclick="dis('8')">8</button>
+      <button type="button" value="9" class="btn btn-light" onclick="dis('9')">9</button>
+
+
+      <button type="button" value="4" class="btn btn-light" onclick="dis('4')">4</button>
+      <button type="button" value="5" class="btn btn-light" onclick="dis('5')">5</button>
+      <button type="button" value="6" class="btn btn-light" onclick="dis('6')">6</button>
+
+
+      <button type="button" value="1" class="btn btn-light" onclick="dis('1')">1</button>
+      <button type="button" value="2" class="btn btn-light " onclick="dis('2')">2</button>
+      <button type="button" value="3" class="btn btn-light" onclick="dis('3')">3</button>
+
+
+      <button type="button" value="0" class="btn btn-light" onclick="dis('0')">0</button>
+      <button type="button" class="decimal function btn btn-secondary" value="."onclick="dis('.')">.</button>
+      <button type="button" class="erase" value="all-clear" onclick="erase()">AC</button>
+      <button type="button" value="%" class="btn btn-light" onclick="dis('%')">%</button>"
+      <button type="button" value="C" class="btn btn-light" onclick="back()" id="clear">C</button>
+
+      <button type="button" class="equal-sign btn btn-default" value="=" onclick="calculate()">=</button>
+
+    </div>
+  </div>
+</body>
+</html>
